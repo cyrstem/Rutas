@@ -1,28 +1,19 @@
 <template>
   <div class="container">
     <div>
-    <DataPreview />
-      <Logo />
       <h1 class="title">
         Rutas
       </h1>
-      <div class="links">
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          Ruta 1
-        </a>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          Ruta 2
-        </a>
+      <div class="flex justify-between">
+        <NuxtLink
+        class="flex bg-white opacity-25 items-center justify-center w-24"
+        to="/cojitambo">
+        Ruta 1</NuxtLink>
+
+        <NuxtLink 
+        class="flex bg-white opacity-25 items-center justify-center w-24"
+        to ="/avVolcanes">Ruta 2
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -38,6 +29,9 @@ export default {}
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+body{
+    background-color: #35495e;
+  }
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -45,6 +39,7 @@ export default {}
   justify-content: center;
   align-items: center;
   text-align: center;
+  
 }
 
 .title {
@@ -61,19 +56,7 @@ export default {}
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color: #35495e;
+  color:white;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>
