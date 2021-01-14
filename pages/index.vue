@@ -6,12 +6,12 @@
       </h1>
       <div class="flex justify-between">
         <NuxtLink
-        class="flex bg-white opacity-25 items-center justify-center w-24"
+        class="flex bg-white text-black items-center justify-center w-24"
         to="/cojitambo">
         Ruta 1</NuxtLink>
 
         <NuxtLink 
-        class="flex bg-white opacity-25 items-center justify-center w-24"
+        class="flex bg-white text-black items-center justify-center w-24"
         to ="/avVolcanes">Ruta 2
         </NuxtLink>
       </div>

@@ -1,7 +1,6 @@
 <template>
     <div>
-        <p>hello</p>
-        
+        <h1>Cojitambo</h1>
     </div>
 </template>
 <script>
