@@ -1,8 +1,6 @@
 <template>
-    <div class="flex mb-4">
-
+    <div>
         <h1>Avenida de los Volcanes</h1>
-
     </div>
 </template>
 <script>

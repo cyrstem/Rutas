@@ -1,19 +1,18 @@
 <template>
-    <div class="w-auto">
-        <!-- <h1>Cojitambo</h1> -->
+    <div>
         <div ref="container" id="container">
-
         </div>
     </div>
 </template>
 <script>
+
 import * as THREE from "three";
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 
 
 export default {
-    //layout:'controls',
+    layout:'controls',
     name:'tester',
 
     data(){
@@ -29,12 +28,14 @@ export default {
             gltf_clicked_name:''
         };
     },
-    mounted() {
+mounted() {
+
         let container = this.$refs.container;
         this.camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
-        this.camera.position.set(0,0,5)
+        this.camera.position.set(0,2,5)
         this.scene = new THREE.Scene()
 
+   
         // RENDER IN PAGE
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setClearColor("#dbdbdb");
@@ -53,13 +54,49 @@ export default {
     this.orbit_controls = new OrbitControls(
       this.camera,
       this.renderer.domElement
-    );
+    )
     this.orbit_controls.addEventListener("change", () =>
       this.renderer.render(this.scene, this.camera)
-    );
+    )
+
+    window.addEventListener('resize',() =>
+        this.renderer.setSize(window.innerWidth,window.innerHeight),
+        this.camera.aspect = window.innerWidth/window.innerHeight,
+        this.camera.updateProjectionMatrix()
+    )
+
+     // event resize---------------------------------------------
+    //window.addEventListener('resize',() =>(
+   // this.renderer.setSize(window.innerWidth, window.innerHeight);
+    //this.camera.aspect = window.innerWidth/window.innerHeight; 
+   // this.camera.updateProjectionMatrix();
+    //)
 
     this.renderer.render(this.scene,this.camera)
-    },
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+
+    // onResize(){
+    //     // this.width = this.root.clientWidth
+    // }
+},
 
 }
 </script>
+
+<style>
+
+#container{
+    animation: 1s appear;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 100%;
+ }
+}
+</style>

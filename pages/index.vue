@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container z-0">
     <div>
       <h1 class="title">
         Rutas
@@ -22,16 +22,11 @@
 <script>
 export default {}
 </script>
-
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 body{
     background-color: #35495e;
   }
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -39,7 +34,7 @@ body{
   justify-content: center;
   align-items: center;
   text-align: center;
-  
+  background-color: #35495e;
 }
 
 .title {
