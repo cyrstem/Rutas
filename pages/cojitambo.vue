@@ -78,13 +78,8 @@ loader.load( 'cojitambo.gltf', function ( gltf ) {
     this.renderer.render(this.scene,this.camera)
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
-},onResize(){
-   window.addEventListener('resize',() =>
-        this.renderer.setSize(window.innerWidth,window.innerHeight),
-        this.camera.aspect = window.innerWidth/window.innerHeight,
-        this.camera.updateProjectionMatrix()
-    )
-},
+}
+
 
 }
 </script>
@@ -95,7 +90,8 @@ loader.load( 'cojitambo.gltf', function ( gltf ) {
   width: 100%;
   height: 100%;
   overflow: hidden;
-    animation: 2s appear;
+  animation: 2s appear;
+  z-index: 0;
 }
 
 @keyframes appear {
@@ -103,9 +99,9 @@ loader.load( 'cojitambo.gltf', function ( gltf ) {
     opacity: 0;
   }
 
-  canvas {
-    width: 100% !important;
-    height: 100%;
- }
 }
+canvas {
+    width: 100% !important;
+    height: 95vh !important;
+ }
 </style>

@@ -1,17 +1,17 @@
 <template>
-  <div class="container z-0">
+  <div class="container border rounded">
     <div>
       <h1 class="title">
         Rutas
       </h1>
       <div class="flex justify-between">
         <NuxtLink
-        class="flex bg-white text-black items-center justify-center w-24"
+        class="flex bg-white text-black items-center justify-center w-24 text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal-700 hover:bg-red mt-4 lg:mt-0"
         to="/cojitambo">
         Ruta 1</NuxtLink>
 
         <NuxtLink 
-        class="flex bg-white text-black items-center justify-center w-24"
+        class="flex bg-white text-black items-center justify-center w-24 text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal-700 hover:bg-red mt-4 lg:mt-0"
         to ="/avVolcanes">Ruta 2
         </NuxtLink>
       </div>
@@ -22,19 +22,15 @@
 <script>
 export default {}
 </script>
-<style>
-body{
-    background-color: #768596;
-  }
+<style >
 
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #35495e;
   overflow: hidden;
 }
 
@@ -52,7 +48,8 @@ body{
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color:white;
+  color:black;
   letter-spacing: 1px;
 }
+
 </style>
