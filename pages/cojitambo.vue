@@ -9,8 +9,6 @@
 import * as THREE from "three";
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
-
-
 export default {
     layout:'controls',
     name:'tester',
@@ -20,25 +18,21 @@ export default {
             camera: null,
             scene: null,
             renderer:null,
-            // gltf:null,
-             orbit_control:null,
-            // transform_controls:null,
-            
-            assets:[],
-            gltf_clicked_name:''
+            gltf:null,
+             orbit_control:null
         };
     },
-mounted() {
+  mounted() {
 
         let container = this.$refs.container;
-        this.camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+        this.camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,100)
         this.camera.position.set(0,2,5)
         this.scene = new THREE.Scene()
 
    
         // RENDER IN PAGE
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setClearColor("#dbdbdb");
+    this.renderer.setClearColor("#000000");
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(this.renderer.domElement);
     
@@ -47,6 +41,20 @@ mounted() {
     const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
     const cube = new THREE.Mesh( geometry, material );
     this.scene.add( cube );
+    
+///OBJ
+   
+const loader = new GLTFLoader();
+
+loader.load( 'cojitambo.gltf', function ( gltf ) {
+
+	this.scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} )
 
 
 
@@ -63,21 +71,19 @@ mounted() {
         this.renderer.setSize(window.innerWidth,window.innerHeight),
         this.camera.aspect = window.innerWidth/window.innerHeight,
         this.camera.updateProjectionMatrix()
+        
     )
 
-     // event resize---------------------------------------------
-    //window.addEventListener('resize',() =>(
-   // this.renderer.setSize(window.innerWidth, window.innerHeight);
-    //this.camera.aspect = window.innerWidth/window.innerHeight; 
-   // this.camera.updateProjectionMatrix();
-    //)
 
     this.renderer.render(this.scene,this.camera)
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
-    // onResize(){
-    //     // this.width = this.root.clientWidth
-    // }
+},onResize(){
+   window.addEventListener('resize',() =>
+        this.renderer.setSize(window.innerWidth,window.innerHeight),
+        this.camera.aspect = window.innerWidth/window.innerHeight,
+        this.camera.updateProjectionMatrix()
+    )
 },
 
 }
@@ -86,7 +92,10 @@ mounted() {
 <style>
 
 #container{
-    animation: 1s appear;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+    animation: 2s appear;
 }
 
 @keyframes appear {

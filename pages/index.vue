@@ -24,7 +24,7 @@ export default {}
 </script>
 <style>
 body{
-    background-color: #35495e;
+    background-color: #768596;
   }
 
 .container {
@@ -35,6 +35,7 @@ body{
   align-items: center;
   text-align: center;
   background-color: #35495e;
+  overflow: hidden;
 }
 
 .title {
