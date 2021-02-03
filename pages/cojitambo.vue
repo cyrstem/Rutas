@@ -1,45 +1,25 @@
 <template>
     <div>
-        <div ref="container" id="container">
-        </div>
+        <dloader />
     </div>
 </template>
 <script>
-
-//import test from '@/test.js'
+import dloader from '@/components/dloader'
 
 export default {
+  components: { dloader },
     layout:'controls',
     name:'tester',
 
     data() {
       return {
-        // model:{},
-        // objects:[],
-        // activeMesh: {},
-        // isLoaded: false,
-        // autoRotate: true
       };
     },
     mounted() {
-      // const { autoRotate } = this;
-      // this.scene =SceneInit({ rootEl: this.$refs.container, autoRotate});
-      // this.loadModel();
+      
     },
     methods:{
-      // loadModel(){
-      //   this.isLoaded = false;
-      //   this.scene.loadModel('model/scene1.gltf', (model)=>{
-      //     model.name = 'tester';
-
-      //   })
-      //   this.model = model
-      //   this.scene.add(model)
-
-      //   setTimeout(() =>{
-      //     this.isLoaded = true
-      //   }, 200)
-      // }
+     
     }
 }
 </script>
