@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import dloader from '@/components/dloader'
+ import dloader from '@/components/dloader'
 
 export default {
   components: { dloader },
@@ -13,13 +13,16 @@ export default {
 
     data() {
       return {
+        
       };
     },
     mounted() {
-      
+      hello()
     },
     methods:{
-     
+     hello(){
+       console.log("hello" +tester)
+     }
     }
 }
 </script>
