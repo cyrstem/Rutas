@@ -1,50 +1,14 @@
 <template>
-    <div>
-        <dloader />
-    </div>
+    <div id ="scene-container" ref="sceneContainer"></div>
 </template>
 <script>
- import dloader from '@/components/dloader'
 
 export default {
-  components: { dloader },
+ 
     layout:'Nav',
-    name:'tester',
+    name:'tester'
 
-    data() {
-      return {
-        
-      };
-    },
-    mounted() {
-      hello()
-    },
-    methods:{
-     hello(){
-       console.log("hello" +tester)
-     }
-    }
 }
 </script>
 
 <style>
-
-#container{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  animation: 2s appear;
-  z-index: 0;
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-
-}
-canvas {
-    width: 100% !important;
-    height: 95vh !important;
- }
-</style>
