@@ -5,6 +5,6 @@
 </template>
 <script>
 export default {
- layout:'controls'
+ layout:'Nav'
 }
 </script>

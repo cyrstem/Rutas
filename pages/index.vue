@@ -20,13 +20,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  // layout: 'main'
+}
 </script>
 <style >
 
 .container {
   margin: 0 auto;
   height: 100vh;
+  width:100%;
   display: flex;
   justify-content: center;
   align-items: center;

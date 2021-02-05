@@ -8,7 +8,7 @@ import dloader from '@/components/dloader'
 
 export default {
   components: { dloader },
-    layout:'controls',
+    layout:'Nav',
     name:'tester',
 
     data() {
