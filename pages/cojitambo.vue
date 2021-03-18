@@ -19,15 +19,25 @@ export default {
         mesh: null
     }
 },
+ mounted() {
+      this.init();
+      this.render();
+      //window.addEventListener( 'resize', this.onWindowResize );
+  },
  methods: {
     init() {
         const container = document.getElementById('container');
         //this.mesh = new Three.Object3D();
 
         this.camera = new Three.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.25, 20);
-        this.camera.position.z =10 ;
+        this.camera.position.z =15 ;
 
         this.scene = new Three.Scene();
+
+
+        this.renderer = new Three.WebGLRenderer({antialias: true});
+        this.renderer.setSize(window.innerWidth,window.innerHeight);
+        this.renderer.setClearColor(0xF9F8ED,1)
         this.light = new Three.DirectionalLight(0xffffff,1.8);
         this.light.position.x =60;
         this.light.position.y =100;
@@ -39,9 +49,7 @@ export default {
             this.scene.add(gltf.scene)
         })
        
-        this.renderer = new Three.WebGLRenderer({antialias: true});
-        this.renderer.setSize(window.innerWidth,window.innerHeight);
-        this.renderer.setClearColor(0xF9F8ED,1)
+       
         const controls = new OrbitControls(this.camera,this.renderer.domElement)
         //controls.minDistance = 20
         //controls.maxDistance= 100
@@ -58,7 +66,7 @@ export default {
         this.animate();
     },
     render() {
-        //requestAnimationFrame(this.render);
+        requestAnimationFrame(this.render);
         // this.mesh.rotation.x += 0.01;
         // this.mesh.rotation.y += 0.02;
         
@@ -66,16 +74,7 @@ export default {
         
     }
    
-  },
-  mounted() {
-      this.init();
-      this.render();
-      //window.addEventListener( 'resize', this.onWindowResize );
-  },
- 
-       
-    
-
+  }
 }
 </script>
 <style scoped>
