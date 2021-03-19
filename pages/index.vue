@@ -25,6 +25,12 @@ export default {
 }
 </script>
 <style >
+html, body{
+  background: url('~assets/fondo1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
 
 .container {
   margin: 0 auto;
@@ -34,7 +40,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
+  border: none;
 }
 
 .title {
@@ -51,8 +57,8 @@ export default {
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color:black;
+  color:white;
   letter-spacing: 1px;
-}
+} 
 
 </style>
