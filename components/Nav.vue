@@ -5,5 +5,10 @@
                 to ="/">Salir
     </NuxtLink>
  </nav>
-
 </template>
+<style scoped>
+nav{
+  width: 100%;
+  height: 100%;
+}
+</style>

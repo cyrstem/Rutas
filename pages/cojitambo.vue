@@ -9,7 +9,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 
 export default {
-    //layout:'Nav',
+    // layout:'Nav',
+    loading:{
+        continuos:true
+    },
     name:'tester',
     data(){
         return {
@@ -32,7 +35,6 @@ export default {
  methods: {
     init() {
         const container = document.getElementById('container');
-        //this.mesh = new Three.Object3D();
 
         this.camera = new Three.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.25, 20);
         this.camera.position.z =15 ;
@@ -56,8 +58,8 @@ export default {
        
        
         const controls = new OrbitControls(this.camera,this.renderer.domElement)
-        //controls.minDistance = 20
-        //controls.maxDistance= 100
+        // controls.minDistance = 20
+        // controls.maxDistance= 100
         controls.target.set(0,0,0);
         controls.update();
         controls.addEventListener( 'change', this.render );
@@ -84,9 +86,8 @@ export default {
 </script>
 <style scoped>
 #container{
-   
-    width: 100%;
-    height: 100%;
+    
+    height: 100vh;
 }
     canvas{
         display: block;
