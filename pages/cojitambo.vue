@@ -37,7 +37,8 @@ export default {
         const container = document.getElementById('container');
 
         this.camera = new Three.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.25, 20);
-        this.camera.position.z =15 ;
+        this.camera.position.z =15;
+        this.camera.rot
 
         this.scene = new Three.Scene();
 
